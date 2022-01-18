@@ -66,7 +66,7 @@ RoomExplorationServer::RoomExplorationServer(ros::NodeHandle nh, std::string nam
 	room_exploration_server_(node_handle_, name_of_the_action, boost::bind(&RoomExplorationServer::exploreRoom, this, _1), false)
 {
 	// dynamic reconfigure
-	room_exploration_dynamic_reconfigure_server_.setCallback(boost::bind(&RoomExplorationServer::dynamic_reconfigure_callback, this, _1, _2));
+	//room_exploration_dynamic_reconfigure_server_.setCallback(boost::bind(&RoomExplorationServer::dynamic_reconfigure_callback, this, _1, _2));
 
 	// Parameters
 	std::cout << "\n--------------------------\nRoom Exploration Parameters:\n--------------------------\n";
@@ -1057,6 +1057,7 @@ bool RoomExplorationServer::publishNavigationGoal(const geometry_msgs::Pose2D& n
 	std::cout << "navigation goal: (" << map_oriented_pose.x << ", "  << map_oriented_pose.y << ", " << map_oriented_pose.theta << ")" << std::endl;
 
 	move_base_msgs::MoveBaseGoal move_base_goal;
+	//ipa_navigation_msgs::MoveBaseGoal move_base_goal;
 
 	// create move_base_goal
 	move_base_goal.target_pose.header.frame_id = "map";

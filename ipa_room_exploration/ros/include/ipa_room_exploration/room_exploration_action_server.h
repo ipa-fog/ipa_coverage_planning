@@ -86,6 +86,7 @@
 #include <ipa_building_msgs/RoomExplorationAction.h>
 #include <cob_map_accessibility_analysis/CheckPerimeterAccessibility.h>
 #include <ipa_building_msgs/CheckCoverage.h>
+#include <ipa_navigation_msgs/MoveBaseAction.h>
 // messages
 #include <geometry_msgs/Pose2D.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -112,6 +113,7 @@
 
 #define PI 3.14159265359
 
+//typedef actionlib::SimpleActionClient<ipa_navigation_msgs::MoveBaseAction> MoveBaseClient;
 typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseClient;
 
 class RoomExplorationServer
